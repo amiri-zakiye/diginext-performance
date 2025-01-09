@@ -26,7 +26,6 @@ const ProductContent = () => {
         { id: 1, title: 'Product 1', description: 'Description 1' },
         { id: 2, title: 'Product 2', description: 'Description 2' },
         { id: 3, title: 'Product 3', description: 'Description 3' },
-        // Add more products as needed
       ])
       setLoading(false)
     }, 1000)
@@ -73,19 +72,17 @@ const ProductContent = () => {
   )
 }
 
-const { Footer } = Layout
-
 const AppFooter = () => {
   return (
-    <Footer style={{ textAlign: 'center' }}>
+    <Layout.Footer style={{ textAlign: 'center' }}>
       Product Listing App ©2023 Created by Your Name
-    </Footer>
+    </Layout.Footer>
   )
 }
 
 const App = () => {
   return (
-    <Layout className="layout">
+    <Layout>
       <AppHeader />
       <ProductContent />
       <AppFooter />
@@ -93,7 +90,7 @@ const App = () => {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
