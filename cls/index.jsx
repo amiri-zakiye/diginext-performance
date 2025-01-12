@@ -33,14 +33,14 @@ const ProductContent = () => {
 
   if (loading) {
     return (
-      <Content style={{ padding: '0 50px', marginTop: 64 }}>
+      <Content style={{ padding: '0 50px', marginTop: 64 , minHeight: '100vh'}}>
         <Spin size="large" style={{ display: 'block', margin: '50px auto' }} />
       </Content>
     )
   }
 
   return (
-    <Content style={{ padding: '0 50px', marginTop: 64 }}>
+    <Content style={{ padding: '0 50px', marginTop: 64,minHeight: '100vh' }}>
       <List
         itemLayout="vertical"
         size="large"
@@ -55,7 +55,6 @@ const ProductContent = () => {
             extra={
               <img
                 width={272}
-                height={168}
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
               />
@@ -83,12 +82,10 @@ const AppFooter = () => {
 
 const App = () => {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <AppHeader style={{ height: '64px' }} />
-      <Layout style={{ height: 'calc(100vh - 128px)',overflowY: 'auto' }}>
-        <ProductContent />
-      </Layout>
-      <AppFooter style={{ height: '64px' }} />
+    <Layout >
+      <AppHeader />
+      <ProductContent />
+      <AppFooter />
     </Layout>
   )
 }
