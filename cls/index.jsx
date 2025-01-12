@@ -55,6 +55,7 @@ const ProductContent = () => {
             extra={
               <img
                 width={272}
+                height={168}
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
               />
@@ -82,10 +83,12 @@ const AppFooter = () => {
 
 const App = () => {
   return (
-    <Layout>
-      <AppHeader />
-      <ProductContent />
-      <AppFooter />
+    <Layout style={{ minHeight: '100vh' }}>
+      <AppHeader style={{ height: '64px' }} />
+      <Layout style={{ height: 'calc(100vh - 128px)',overflowY: 'auto' }}>
+        <ProductContent />
+      </Layout>
+      <AppFooter style={{ height: '64px' }} />
     </Layout>
   )
 }
